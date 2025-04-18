@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Carte personnelle</title>
+  <link rel="stylesheet" href="css/style.css" />
+ 
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React et Babel -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Script React avec Babel -->
+  <script type="text/babel">
+    function CartePersonnel({ nom, poste, image }) {
+      return (
+        <div className="carte">
+          <img src={image} alt="Photo de profil" />
+          <div className="nom">{nom}</div>
+          <div className="poste">{poste}</div>
+        </div>
+      );
+    }
+
+    const personne = {
+      nom: "Elinna ",
+      poste: "Développeuse Frontend",
+      image: "img/profil.jpg"
+    };
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <CartePersonnel 
+        nom={personne.nom} 
+        poste={personne.poste} 
+        image={personne.image} 
+      />
+    );
+  </script>
+</body>
+</html>
